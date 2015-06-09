@@ -45,7 +45,7 @@ get('/lists/:id/tasks/new') do
   erb(:task_form)
 end
 
-post("/tasks") do
+post("/lists/:id/tasks/new") do
   description = params.fetch("description")
   list_id = params.fetch("list_id").to_i()
   @list = List.find(list_id)

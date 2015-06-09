@@ -1,7 +1,7 @@
 <h1><%= @list.name() %>'s Tasks </h1>
 
 
-<h3>Here are your tasks:</h3>
+
 <% if @list.tasks.any?() %>
 <h3>Here are your tasks for this list:</h3>
 
@@ -25,7 +25,7 @@
 <h3> Add a task to <%= @list.name() %> </h3>
 
 
-<form action="/tasks" method="post">
+<form action="/lists/:id/tasks/new" method="post">
   <input id="list_id" name="list_id" type="hidden" value="<%= @list.id() %>">
 
   <label for="description">Description of the task:</label>
@@ -40,5 +40,5 @@
   <a href="/">Home |</a>
   <a href="/lists"> View All Lists |</a>
   <a href="/lists/new"> Add New List |</a>
-  <a href="/:id/task_form"> Add New Task</a>
+  <a href="/lists/:id/tasks/new"> Add New Task</a>
 </div>
